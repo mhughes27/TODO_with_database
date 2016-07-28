@@ -1,1 +1,21 @@
 <h1> Hello World </h1>
+
+
+<% @tasks.each do |task| %>
+	<p><%= task["name"] %></p>
+	<p><%= task["description"] %></p>
+<% end %>
+
+
+<H1> BOB's </H1>
+<% @bob.each do |task| %>
+	<p><%= task["name"] %></p>
+	<p><%= task["description"] %></p>
+<% end %>
+
+
+<H1> COMPLETED </H1>
+<% @complete.each do |task| %>
+	<p><%= task["name"] %></p>
+	<p><%= task["description"] %></p>
+<% end %>
