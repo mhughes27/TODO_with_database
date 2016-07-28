@@ -21,6 +21,7 @@
 		<li><%= element["name"] %></li>
 		<li><%= element["description"] %></li>
 		<form method="post" action="/delete"> 
+			<input type="hidden"  name="task_id" value="<%= element["task_id"] %>">
 			<input type="hidden" name="num" value ="2">
 			<input type="submit" value="Delete">
 		</form>
@@ -33,6 +34,7 @@
 		<li><%= element["name"] %></li>
 		<li><%= element["description"] %></li>
 		<form method="post" action="/delete"> 
+			<input type="hidden"  name="task_id" value="<%= element["task_id"] %>">
 			<input type="hidden" name="num" value ="2">
 			<input type="submit" value="Delete">
 		</form>

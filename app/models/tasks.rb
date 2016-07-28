@@ -27,12 +27,11 @@ class Tasks
 		DB.execute("SELECT * FROM tasks WHERE name=\"#{name}\" and status=\"complete\";")
 	end
 
+	def delete_task(task_id)
+		DB.execute("DELETE FROM tasks WHERE task_id=#{task_id};")
+	end
 
-
-	# def add_task()
-	# 	DB.execute("INSERT INTO tasks (name, description, status) VALUES name=\"Lisa\", description=\"Feed the fish\", status=\"incomplete\";")
-	# end
-
+	
 
 # the class end
 end

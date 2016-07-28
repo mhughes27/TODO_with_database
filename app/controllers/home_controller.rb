@@ -37,6 +37,12 @@ MyApp.get "/filtered" do
 	erb :"filtered"
 end
 
+MyApp.post '/delete' do
+   @delete = Tasks.new.delete_task(params[:task_id])
+   redirect '/'
+ end
+
+
 # MyApp.get "/" do
 # 	@completedTasks = Task.done
 # 	@incompleteTasks = Task.notDone
