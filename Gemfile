@@ -23,3 +23,5 @@ gem 'inch', require: false
 
 gem 'rest-client', '~> 2.0'
 gem 'json'
+
+gem 'sqlite3'

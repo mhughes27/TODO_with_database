@@ -3,7 +3,9 @@ require "sqlite3"
 
 
 # Open a database
-db = SQLite3::Database.new "test.db"
+db = SQLite3::Database.new "TODO.db"
+db.results_as_hash = true
+
 
 
 binding.pry
