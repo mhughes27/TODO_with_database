@@ -1,0 +1,28 @@
+<div class="mainContent">
+
+<h1><%= @member %>'s Tasks</h1>
+
+<% @filtered_todo.each do |element| %>
+	<ul>
+		<li><%= element["name"] %></li>
+		<li><%= element["description"] %></li>
+		<form method="post" action="/delete"> 
+			<input type="hidden" name="num" value ="2">
+			<input type="submit" value="Delete">
+		</form>
+	</ul>
+<% end %>
+
+<h1 class="ListTitle">Completed Tasks</h1>
+<% @filtered_done.each do |element| %>
+	<ul>
+		<li><%= element["name"] %></li>
+		<li><%= element["description"] %></li>
+		<form method="post" action="/delete"> 
+			<input type="hidden" name="num" value ="2">
+			<input type="submit" value="Delete">
+		</form>
+	</ul>
+<% end %>
+
+</div>

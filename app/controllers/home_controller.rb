@@ -29,16 +29,13 @@ MyApp.post "/new/process" do
 end
 
 
+MyApp.get "/filtered" do
+	@member = params[:user]
+	@filtered_todo = Tasks.new.filtered_todo(params[:user])
+	@filtered_done = Tasks.new. filtered_done(params[:user])
 
-
-
-
-# MyApp.get "/filtered" do
-# 	@theseAreNotDone = Task.familyMemberToDos(params[:user])
-# 	@theseAreDone = Task.familyMemberDone(params[:user])
-
-# 	erb :"filtered"
-# end
+	erb :"filtered"
+end
 
 # MyApp.get "/" do
 # 	@completedTasks = Task.done

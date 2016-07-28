@@ -14,10 +14,17 @@ class Tasks
 	def incomplete
 		DB.execute("SELECT * FROM tasks WHERE status=\"incomplete\";")
 	end
-	
 
 	def create_task(name, task, status)
 		DB.execute("INSERT INTO tasks (name, description, status) VALUES (\"#{name}\", \"#{task}\", \"#{status}\");")
+	end
+
+	def filtered_todo(name)
+		DB.execute("SELECT * FROM tasks WHERE name=\"#{name}\" and status=\"incomplete\";")
+	end
+
+	def filtered_done(name) 
+		DB.execute("SELECT * FROM tasks WHERE name=\"#{name}\" and status=\"complete\";")
 	end
 
 
