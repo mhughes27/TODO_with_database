@@ -11,6 +11,11 @@ class Tasks
 		DB.execute("SELECT * FROM tasks WHERE status=\"complete\";")
 	end
 
+	def incomplete
+		DB.execute("SELECT * FROM tasks WHERE status=\"incomplete\";")
+	end
+	
+
 	def create_task(name, task, status)
 		DB.execute("INSERT INTO tasks (name, description, status) VALUES (\"#{name}\", \"#{task}\", \"#{status}\");")
 	end

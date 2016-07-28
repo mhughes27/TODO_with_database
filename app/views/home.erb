@@ -29,6 +29,13 @@
 	<p><%= task["description"] %></p>
 <% end %>
 
+<H1> INCOMPLETE </H1>
+<% @incomplete.each do |task| %>
+	<p><%= task["name"] %></p>
+	<p><%= task["description"] %></p>
+<% end %>
+
+
 
 <H1> COMPLETED </H1>
 <% @complete.each do |task| %>

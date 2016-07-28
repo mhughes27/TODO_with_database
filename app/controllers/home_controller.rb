@@ -3,6 +3,7 @@ MyApp.get "/" do
 # basic functions
 @tasks = Tasks.new.all
 @bob = Tasks.new.bob
+@incomplete = Tasks.new.incomplete
 @complete = Tasks.new.complete
 
 
