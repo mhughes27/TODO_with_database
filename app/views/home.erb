@@ -13,14 +13,37 @@
 </div>
 
 
+<div class="mainContent">
 
-
-
-
-<% @tasks.each do |task| %>
-	<p><%= task["name"] %></p>
-	<p><%= task["description"] %></p>
+<h1>To Do List</h1>
+<% @incomplete.each do |element| %>
+	<ul>
+		<li><%= element["name"] %></li>
+		<li><%= element["description"] %></li>
+		<form method="post" action="/delete"> 
+			<input type="hidden" name="num" value ="2">
+			<input type="submit" value="Delete">
+		</form>
+	</ul>
 <% end %>
+
+<h1 class="ListTitle">Completed Tasks</h1>
+<% @complete.each do |element| %>
+	<ul>
+		<li><%= element["name"] %></li>
+		<li><%= element["description"] %></li>
+		<form method="post" action="/delete"> 
+			<input type="hidden" name="num" value ="2">
+			<input type="submit" value="Delete">
+		</form>
+	</ul>
+<% end %>
+
+</div>
+
+
+
+
 
 
 <H1> BOB's </H1>
@@ -29,16 +52,3 @@
 	<p><%= task["description"] %></p>
 <% end %>
 
-<H1> INCOMPLETE </H1>
-<% @incomplete.each do |task| %>
-	<p><%= task["name"] %></p>
-	<p><%= task["description"] %></p>
-<% end %>
-
-
-
-<H1> COMPLETED </H1>
-<% @complete.each do |task| %>
-	<p><%= task["name"] %></p>
-	<p><%= task["description"] %></p>
-<% end %>
