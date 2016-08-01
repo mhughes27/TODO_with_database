@@ -53,6 +53,11 @@ MyApp.post "/edit" do
 	erb :"edit"
 end
 
+MyApp.post "/edit/process" do
+	@edited_task = Tasks.new.edit_task(params[:task_id], params[:name], params[:description], params[:status])
+	redirect '/'
+end
+
 
 
 # MyApp.post "/edit" do
