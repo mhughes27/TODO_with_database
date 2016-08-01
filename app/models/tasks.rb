@@ -31,6 +31,15 @@ class Tasks
 		DB.execute("DELETE FROM tasks WHERE task_id=#{task_id};")
 	end
 
+	def task_to_edit(task_id)
+		DB.execute("SELECT * FROM tasks WHERE task_id=#{task_id};")
+	end
+
+	# def edit_taks(task_id, name, description, status)
+	# 	DB.execute("UPDATE tasks SET name=\"#{name}\", description=\"#{description}\", status=\"#{status}\" WHERE task_id=#{task_id};")
+	# end
+
+
 	
 
 # the class end

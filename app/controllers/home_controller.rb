@@ -42,31 +42,44 @@ MyApp.post '/delete' do
    redirect '/'
  end
 
+MyApp.post "/edit" do
+	@description = params[:description]
+	@name = params[:name]
+	@status = params[:status]
 
-# MyApp.get "/" do
-# 	@completedTasks = Task.done
-# 	@incompleteTasks = Task.notDone
-# 	erb :"home"
 
+	@task_to_edit = Tasks.new.task_to_edit(params[:task_id])
+
+	erb :"edit"
+end
+
+
+
+# MyApp.post "/edit" do
+# 	@task = params[:task]
+# 	@person = params[:person]
+# 	@status = params[:status]
+
+# 	Task.editTask(params[:num], "tasks.txt")
+# 	erb :"edit"
 # end
 
-# MyApp.get "/new" do
-# 	erb :"new"
+
+
+# MyApp.post "/edit" do
+# 	@task = params[:task]
+# 	@person = params[:person]
+# 	@status = params[:status]
+
+# 	Task.editTask(params[:num], "tasks.txt")
+# 	erb :"edit"
 # end
 
 
-# MyApp.post "/new/process" do
-# 	@new_task = params[:task]
-# 	@new_person = params[:person]
-
-# 	# TODO - Move the complexity about adding things to a 
-# 	# file into a separate function that's defined in
-# 	# a model.
-
-# 	somefile = File.open("tasks.txt", "a")
-# 	somefile.puts "i|#{@new_person}|#{@new_task}"
-# 	somefile.close
-#   redirect '/'
+# MyApp.post "/edit/process" do
+# 	Task.deleteTask(params[:num],"tasks.txt")
+# 	@edittask = Task.editExistingTask("tasks.txt", params[:status], params[:person], params[:task], rand(99999999))
+#   	redirect '/'
 # end
 
 
