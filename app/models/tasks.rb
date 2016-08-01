@@ -1,13 +1,13 @@
 class Tasks
-	def all 
+	def all_tasks
 		DB.execute("SELECT * FROM tasks;")
 	end
 
-	def complete
+	def completed_tasks
 		DB.execute("SELECT * FROM tasks WHERE status=\"complete\";")
 	end
 
-	def incomplete
+	def incomplete_tasks
 		DB.execute("SELECT * FROM tasks WHERE status=\"incomplete\";")
 	end
 
