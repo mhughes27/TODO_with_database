@@ -2,13 +2,8 @@ MyApp.get "/" do
 
 # basic functions
 @tasks = Tasks.new.all
-@bob = Tasks.new.bob
 @incomplete = Tasks.new.incomplete
 @complete = Tasks.new.complete
-
-
-# @add = Tasks.new.add_task
-
 
 erb :"home"
 
@@ -58,42 +53,3 @@ MyApp.post "/edit/process" do
 	redirect '/'
 end
 
-
-
-# MyApp.post "/edit" do
-# 	@task = params[:task]
-# 	@person = params[:person]
-# 	@status = params[:status]
-
-# 	Task.editTask(params[:num], "tasks.txt")
-# 	erb :"edit"
-# end
-
-
-
-# MyApp.post "/edit" do
-# 	@task = params[:task]
-# 	@person = params[:person]
-# 	@status = params[:status]
-
-# 	Task.editTask(params[:num], "tasks.txt")
-# 	erb :"edit"
-# end
-
-
-# MyApp.post "/edit/process" do
-# 	Task.deleteTask(params[:num],"tasks.txt")
-# 	@edittask = Task.editExistingTask("tasks.txt", params[:status], params[:person], params[:task], rand(99999999))
-#   	redirect '/'
-# end
-
-
-
-# MyApp.get "/edit" do
-# 	erb :"edit"
-# end
-
-# MyApp.post '/delete' do
-# 	Task.deleteTask()
-# 	redirect '/'
-# 	end

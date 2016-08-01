@@ -3,10 +3,6 @@ class Tasks
 		DB.execute("SELECT * FROM tasks;")
 	end
 
-	def bob
-		DB.execute("SELECT * FROM tasks WHERE name=\"Bob\";")
-	end
-
 	def complete
 		DB.execute("SELECT * FROM tasks WHERE status=\"complete\";")
 	end
